@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="register.js"></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <form name="myRegister" id="myRegister" action="login.html">
+
+            <fieldset>
+                <legend>Register</legend>
+                <p class="required-text">* Required</p>
+                <span id="errormsg"></span>
+                <label for="firstname">
+                    First name*
+                </label>
+
+                <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                >
+
+                <label for="lastname">
+                    Last name*
+                </label>
+
+                <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                >
+
+                <label>
+                    Gender*
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="male"
+                        >
+                        Male
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="female"
+                        >
+                        Female
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="other"
+                        >
+                        Mental Illness
+                    </label>
+
+                </div>
+
+                <label for="bday">
+                    Birthday*
+                </label>
+
+                <input
+                    type="date"
+                    name="bday"
+                    id="bday"
+                >
+
+                <label for="email">
+                    Email address*
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                >
+
+                <label for="regUsername">
+                    Username*
+                </label>
+
+                <input
+                    type="text"
+                    name="username"
+                    id="regUsername"
+                >
+
+                <label for="password">
+                    Password*
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                >
+
+                <label for="retypePassword">
+                    Retype Password*
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    id="retypePassword"
+                >
+
+                <div class="button-group">
+
+                    <input
+                        type="submit"
+                        value="Register"
+                        id="registerBtn"
+                    >
+
+                    <input
+                        type="reset"
+                        value="Reset"
+                        id="resetBtn"
+                    >
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

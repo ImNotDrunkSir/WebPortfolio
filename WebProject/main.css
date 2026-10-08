@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #7bdbfe,
+        #305ffb
+    );
+    color: #ffffff;
+    padding: 20px;
+}
+
+.portfolio-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 120px 28% 1fr;
+    grid-template-areas:
+        "profile header header"
+        "personal personal projects"
+        "assignments assignments projects"
+        "social social projects";
+
+    gap: 12px;
+}
+
+.profile-box {
+    grid-area: profile;
+    width: 130px;
+    height: 130px;
+    background: #cbd5df;
+    border: 2px solid #111;
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.header {
+    grid-area: header;
+    min-height: 105px;
+    background: linear-gradient(
+        135deg,
+        #8055f5,
+        #4fd1d9
+    );
+    border: 2px solid #111;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #d5dce3;
+    border: 2px solid #111;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    flex: 1;
+    text-align: center;
+    color: white;
+}
+
+.profile-name h1 {
+    font-size: 25px;
+}
+
+.profile-name h2 {
+    font-size: 20px;
+}
+
+.profile-name p {
+    font-size: 18px;
+}
+
+.card {
+    background: linear-gradient(
+        135deg,
+        #035a27,
+        #03c343
+    );
+    border: 2px solid #111;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.personal {
+    grid-area: personal;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.personal h2 {
+    margin-bottom: 15px;
+}
+
+.personal p {
+    margin: 5px 0;
+}
+
+.assignments {
+    grid-area: assignments;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.assignments h2 {
+    margin-bottom: 10px;
+}
+
+.assignments a {
+    color: white;
+    text-decoration: none;
+    margin: 4px 0;
+    transition: 0.2s;
+}
+
+.assignments a:hover {
+    color: #7048e8;
+    transform: scale(1.03);
+}
+
+.projects {
+    grid-area: projects;
+    min-height: 410px;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item {
+    background: white;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    min-height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+.project-item:hover {
+    transform: scale(1.01);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    max-height: 800px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e7eb;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 800px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+
+.project-info h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+
+.project-info p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.social {
+    grid-area: social;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.social a {
+    color: white;
+    text-decoration: none;
+}
+
+.social a:hover {
+    color: #7048e8;
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio-container {
+        width: 95%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "personal personal"
+            "assignments projects"
+            "social projects";
+    }
+    .header-title {
+        display: none;
+    }
+    .profile-name h1 {
+        font-size: 22px;
+    }
+    .profile-name h2 {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .portfolio-container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "personal"
+            "assignments"
+            "projects"
+            "social";
+    }
+    .header {
+        min-height: 150px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+    }
+    .project-image {
+    width: 100%;
+    height: 220px;
+    max-height: 220px;
+    }
+    .project-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    }
+    .project-info {
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    }
+    .project-info h3 {
+    font-size: 22px;
+    }
+    .profile-name h1 {
+        font-size: 20px;
+    }
+    .profile-name h2 {
+        font-size: 15px;
+    }
+    .profile-name p {
+        font-size: 14px;
+    }
+    .personal {
+        min-height: 180px;
+    }
+    .assignments {
+        min-height: 180px;
+    }
+    .projects {
+        min-height: auto;
+    }
+    .project-item {
+    grid-template-columns: 1fr;
+}
+}
